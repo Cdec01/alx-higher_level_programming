@@ -1,8 +1,26 @@
 #!/usr/bin/python3
+""" Module Sqaure """
+
+
 class Square:
+    """ Square class defined by geometric shap
+
+    Attributes:
+        size (int): Size of square
+    """
     def __init__(self, size=0):
-        self.__size = size
-        if not isinstance(self.__size, int):
+        """
+        Initialize methode
+
+        Args:
+            size (int): int to assign to square size
+        Raise:
+            TypeError: if size is not int
+            ValueError: size less than 0
+        """
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        elif self.__size < 0:
-            raise ValueError("size must br >= 0")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
